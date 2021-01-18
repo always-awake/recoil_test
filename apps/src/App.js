@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { RecoilRoot } from "recoil";
+import CharacterCounter from "./components/CharacterCounter";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // recoil state를 사용하기 위해, 부모 컴포넌트 트리 안에 RecoilRoot를 위치시켜야한다.
+    // 루트 컴포넌트가 RecoilRoot를 위치시키기에 가장 좋은 위치
+    <RecoilRoot>
+      <p>Test Recoil</p>
+      <CharacterCounter />
+    </RecoilRoot>
   );
-}
+};
 
 export default App;
